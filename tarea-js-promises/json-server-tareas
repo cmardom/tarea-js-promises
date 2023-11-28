@@ -1,0 +1,7 @@
+1. Listado : 
+	- get pelicula
+	- bucle para añadir li + info de evento	
+2. Evento en li: cargar peli sin cambiar de pagina. EventListener (se usa a pero es enlace vacío)
+3. Cargar pelicula n 
+4. Mostrar gif de carga
+5. Mostrar información + imagen de pelicula
