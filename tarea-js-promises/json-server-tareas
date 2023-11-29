@@ -5,3 +5,52 @@
 3. Cargar pelicula n 
 4. Mostrar gif de carga
 5. Mostrar información + imagen de pelicula
+
+
+
+Incluir el javascript necesario para que en el listado de películas aparezcan las incluidas en la URL relativa /peliculas.
+Al pulsar sobre una pelicula, cargar la información de la película y la ruta del cartel.
+Para cargar el cartel usar la función fetchSlow incluida en lib.js, mostrando durante el tiempo de carga un gif animado de carga.
+
+Se puede añadir y cambiar etiquetas del HTML.
+Lo que hay que mantener son las dos columnas. La forma de mostrar la lista y la información se puede elegir.
+Por ejemplo, la lista se puede poner con botones.
+
+
+
+--------------------
+
+
+Pasos para Mostrar las Películas y su Información:
+    1. Cargar la Base de Datos JSON
+Objetivo: Cargar los datos de tus películas desde el archivo JSON.
+Cómo hacerlo: Puedes usar fetch si tu JSON está en un servidor o directamente importar el JSON si está localmente.
+    2. Crear la Lista de Películas en HTML
+Objetivo: Mostrar todas las películas en la lista (<ul>).
+Cómo hacerlo:
+Recorre el array de películas.
+Por cada película, crea un elemento <li> con un <a> que contenga el nombre de la película.
+Añade cada <li> a tu <ul> en el HTML.
+Usa document.createElement y appendChild para crear y añadir elementos al DOM.
+
+
+    3. Manejar el Evento de Click en Cada Película
+Objetivo: Detectar cuando un usuario hace clic en una película y mostrar su información.
+Cómo hacerlo:
+Añade un evento de click a cada <a> de tu lista.
+Este evento debe llamar a una función que maneje la visualización de la información de la película seleccionada.
+    4. Mostrar la Información de la Película Seleccionada
+Objetivo: Mostrar detalles como el director, clasificación, valoración, y cartel.
+Cómo hacerlo:
+Usa el ID de la película seleccionada para obtener sus detalles del JSON.
+Actualiza los elementos del DOM (#director, #clasificacion, #cartel, etc.) con la información correspondiente.
+Para la imagen, asegúrate de tener una ruta relativa correcta a tu carpeta de imágenes.
+    5. Manejar la Valoración con Estrellas
+Objetivo: Mostrar la valoración de la película en forma de estrellas.
+Cómo hacerlo:
+Basado en la valoración de la película (por ejemplo, 4), crea esa cantidad de estrellas llenas (<i class="fa fa-star"></i>) y el resto vacías (<i class="fa fa-star-o"></i>).
+Actualiza el HTML del elemento de valoración con las estrellas correspondientes.
+
+
+
+
