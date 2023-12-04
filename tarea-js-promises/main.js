@@ -37,15 +37,23 @@ function mostrarPeliculas(peliculas){
 
 // Función para buscar una película por ID
 function buscarPelicula(id) {
-    fetch(`http://localhost:3000/pelicula/${id}`)  // Asume que este endpoint existe en tu servidor
+    document.getElementById('cargando').style.display = 'block'; // Mostrar el GIF
+
+    fetch(`http://localhost:3000/pelicula/${id}`)
         .then(response => response.json())
         .then(pelicula => {
-            mostrarDetallesPelicula(pelicula);
+            setTimeout(()=>{
+                mostrarDetallesPelicula(pelicula);
+                document.getElementById('cargando').style.display = 'none'; // Ocultar el GIF
+            }, 2000) ;
+
         })
         .catch(error => {
             console.error('Error al cargar la película:', error);
+            document.getElementById('cargando').style.display = 'none';
         });
 }
+
 
 // Mostrar info de cada película
 function mostrarDetallesPelicula(pelicula){
